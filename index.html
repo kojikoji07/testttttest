@@ -8,12 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <style>
         :root {
             --color-navy: #0f172a;
             --color-cyan: #06b6d4;
         }
-
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #cbd5e1;
@@ -22,7 +23,6 @@
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
-
         .font-roboto { font-family: 'Roboto', sans-serif; }
         .font-orbitron { font-family: 'Orbitron', sans-serif; }
 
@@ -66,23 +66,15 @@
                 flex-shrink: 0;
             }
         }
-
         .bg-grid-pattern {
             background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
             background-size: 40px 40px;
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
 </head>
 <body>
     <div id="root"></div>
-    <!-- メインのロジックをモジュールとして読み込み -->
-    <script type="module" src="./index.tsx"></script>
+
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
