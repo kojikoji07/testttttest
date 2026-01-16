@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabio Nara 35期部門方針 - Hybrid Logic</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;500;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-navy: #0f172a;
+            --color-cyan: #06b6d4;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #cbd5e1;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0; }
+            body { background: white !important; }
+            .slide-container { 
+                padding: 0 !important; 
+                background: white !important; 
+                gap: 0 !important; 
+                display: block !important; 
+            }
+            .slide { 
+                width: 100% !important; 
+                height: 100vh !important; 
+                page-break-after: always; 
+                break-after: page; 
+                box-shadow: none !important; 
+                margin: 0 !important; 
+            }
+            .slide:last-child { page-break-after: auto; }
+            .no-print { display: none !important; }
+        }
+
+        @media screen {
+            .slide-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+                padding: 4rem;
+                padding-bottom: 12rem;
+            }
+            .slide {
+                width: 297mm;
+                height: 210mm;
+                background: white;
+                box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
+                position: relative;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+        }
+
+        .bg-grid-pattern {
+            background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- メインのロジックをモジュールとして読み込み -->
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
