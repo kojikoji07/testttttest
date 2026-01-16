@@ -16,8 +16,8 @@ import {
   Square
 } from 'https://esm.sh/lucide-react@0.284.0';
 
-// 基本スライドフレーム
-const SlideFrame = ({ children, pageNum, title, subTitle, dark = false }: any) => (
+// 基本スライドフレーム（型定義 :any を削除）
+const SlideFrame = ({ children, pageNum, title, subTitle, dark = false }) => (
   <div className={`slide ${dark ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'} flex flex-col relative`}>
     <header className="absolute top-0 left-0 w-full p-12 flex justify-between items-start z-20">
       <div className="flex flex-col">
@@ -261,5 +261,9 @@ const App = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(<App />);
+// 型エラー防止のため ! を削除
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(React.createElement(App));
+}
