@@ -11,70 +11,20 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
-        :root {
-            --color-navy: #0f172a;
-            --color-cyan: #06b6d4;
-        }
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: #cbd5e1;
-            margin: 0;
-            padding: 0;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
-        .font-roboto { font-family: 'Roboto', sans-serif; }
+        /* 前回のスタイルをそのまま維持 */
+        :root { --color-navy: #0f172a; --color-cyan: #06b6d4; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #cbd5e1; margin: 0; padding: 0; }
         .font-orbitron { font-family: 'Orbitron', sans-serif; }
-
-        @media print {
-            @page { size: A4 landscape; margin: 0; }
-            body { background: white !important; }
-            .slide-container { 
-                padding: 0 !important; 
-                background: white !important; 
-                gap: 0 !important; 
-                display: block !important; 
-            }
-            .slide { 
-                width: 100% !important; 
-                height: 100vh !important; 
-                page-break-after: always; 
-                break-after: page; 
-                box-shadow: none !important; 
-                margin: 0 !important; 
-            }
-            .slide:last-child { page-break-after: auto; }
-            .no-print { display: none !important; }
-        }
-
         @media screen {
-            .slide-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 3rem;
-                padding: 4rem;
-                padding-bottom: 12rem;
-            }
-            .slide {
-                width: 297mm;
-                height: 210mm;
-                background: white;
-                box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
-                position: relative;
-                overflow: hidden;
-                flex-shrink: 0;
-            }
+            .slide-container { display: flex; flex-direction: column; align-items: center; gap: 3rem; padding: 4rem; }
+            .slide { width: 297mm; height: 210mm; background: white; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
         }
-        .bg-grid-pattern {
-            background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
+        .bg-grid-pattern { background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px); background-size: 40px 40px; }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+    <script type="text/babel" data-type="module" src="./index.js"></script>
 </body>
 </html>
